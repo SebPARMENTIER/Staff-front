@@ -1,0 +1,14 @@
+.footer {
+  width: 100%;
+  height: 5%;
+  background-color: #77b5fe;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &-year {
+    color: white;
+  }
+}

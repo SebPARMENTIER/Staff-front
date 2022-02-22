@@ -1,0 +1,23 @@
+.header {
+  width: 100%;
+  height: 10%;
+  background-color: #77b5fe;
+  position: fixed;
+  top: 0;
+
+  &-nav {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &-leftside {
+      padding-left: 1em;
+
+      &-link {
+        color: white;
+        text-decoration: none;
+      }
+    }
+  }
+}
