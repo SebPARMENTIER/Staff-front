@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+
 import './header.scss';
 
 const Header = ({
@@ -21,6 +23,11 @@ const Header = ({
     </div>
   );
 };
-  
-  export default Header;
+
+Header.propTypes = {
+  firstname: PropTypes.string.isRequired,
+  isLogged: PropTypes.bool.isRequired
+};
+
+export default Header;
   
