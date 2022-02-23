@@ -7,10 +7,16 @@ import {
   createSubmitAction
 } from '../../actions/user';
 
+import {
+  createGetAllCardsAction,
+  createGetAllMenusAction
+} from '../../actions/cards';
+
 const mapStateToProps = (state) => ({
   email: state.user.email,
   password: state.user.password,
-  isError: state.user.isError
+  isError: state.user.isError,
+  isLogged: state.user.isLogged
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -20,6 +26,12 @@ const mapDispatchToProps = (dispatch) => ({
   handleLogin: () => {
     dispatch(createSubmitAction());
   },
+  getAllCards: () => {
+    dispatch(createGetAllCardsAction());
+  },
+  getAllMenus: () => {
+    dispatch(createGetAllMenusAction());
+  }
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

@@ -28,6 +28,8 @@ const authMiddleware = (store) => (next) => (action) => {
         });
       break;
     }
+    default:
+      next(action);
   }
 };
 

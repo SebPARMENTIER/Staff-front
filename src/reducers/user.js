@@ -24,10 +24,10 @@ const reducer = (state = initialState, action = {}) => {
       const { firstname, accessToken } = action.data;
       return {
         ...state,
-        firstname: firstname,
+        firstname,
         token: accessToken,
         isError: false,
-        islogged: true,
+        isLogged: true,
         email: '',
         password: '',
       };
