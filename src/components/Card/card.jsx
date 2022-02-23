@@ -10,7 +10,6 @@ const Card = ({
 
   const cardName = cardsName.find(element => element.id == id);
 
-  console.log(('cardName', cardName));
   return (
     <div className="card">
       <div className="card-title">
@@ -20,37 +19,43 @@ const Card = ({
         {cardName.description}
       </div>
       <div className="card-drinks">
+        <div className="card-drinks-desc">Nos boissons</div>
         {cardName.drinks_card.map((drink) => (
           <div
             key={drink.id}
             className="card-drinks-drink"
           >
-            <div className="card-drinks-drink-title">
-              {drink.title}
+            <div className="card-drinks-drink-header">
+              <div className="card-drinks-drink-header-title">
+                {drink.title}
+              </div>
+              <div className="card-drinks-drink-header-price">
+                {drink.price}
+              </div>
             </div>
             <div className="card-drinks-drink-description">
               {drink.description}
-            </div>
-            <div className="card-drinks-drink-price">
-              {drink.price}
             </div>
           </div>
         ))}
       </div>
       <div className="card-foods">
+        <div className="card-foods-desc">Nos plats</div>
         {cardName.foods_card.map((food) => (
           <div
             key={food.id}
             className="card-foods-food"
           >
-            <div className="card-foods-food-title">
-              {food.title}
+            <div className="card-foods-food-header">
+              <div className="card-foods-food-header-title">
+                {food.title}
+              </div>
+              <div className="card-foods-food-header-price">
+                {food.price}
+              </div>
             </div>
             <div className="card-foods-food-description">
               {food.description}
-            </div>
-            <div className="card-foods-food-price">
-              {food.price}
             </div>
           </div>
         ))}

@@ -1,6 +1,6 @@
 .header {
   width: 100%;
-  height: 10%;
+  height: 5%;
   background-color: #77b5fe;
   position: fixed;
   top: 0;
@@ -18,6 +18,11 @@
         color: white;
         text-decoration: none;
       }
+    }
+
+    &-rightside {
+      padding-right: 1em;
+      color: white;
     }
   }
 }

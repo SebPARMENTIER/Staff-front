@@ -72,7 +72,7 @@ const Home = ({
         <>
           <div className="home-access-card">
             <Link
-              className='home-access-card-button'
+              className='home-access-card-link'
               to='/cards'
               onClick={handleGetAllCards}
             >
@@ -81,7 +81,7 @@ const Home = ({
           </div>
           {/* <div className="home-access-menu">
             <Link
-              className='home-access-menu-button'
+              className='home-access-menu-link'
               to='/menu'
               onClick={handleGetAllMenus}
             >
