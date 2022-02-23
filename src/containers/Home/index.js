@@ -8,9 +8,12 @@ import {
 } from '../../actions/user';
 
 import {
-  createGetAllCardsAction,
-  createGetAllMenusAction
+  createGetAllCardsAction
 } from '../../actions/cards';
+
+import {
+  createGetAllMenusAction
+} from '../../actions/menus';
 
 const mapStateToProps = (state) => ({
   email: state.user.email,

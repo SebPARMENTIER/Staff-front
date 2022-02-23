@@ -79,15 +79,15 @@ const Home = ({
               Accéder aux cartes du restaurant
             </Link>
           </div>
-          {/* <div className="home-access-menu">
+          <div className="home-access-menu">
             <Link
               className='home-access-menu-link'
-              to='/menu'
+              to='/menus'
               onClick={handleGetAllMenus}
             >
               Accéder aux menus du restaurant
             </Link>
-          </div> */}
+          </div>
         </>
       )}
     </div>
