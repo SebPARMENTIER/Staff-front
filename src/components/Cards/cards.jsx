@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import { ImPencil2, ImBin } from 'react-icons/im';
 
 import './cards.scss';
 
@@ -18,7 +19,14 @@ const Cards = ({ cardsName }) => {
               <div className="cards-list-link-header-title">
                 {card.title}
               </div>
-              <div className="cards-list-link-header-options">...</div>
+              <div className="cards-list-link-header-options">
+                <div className="cards-list-link-header-options-update">
+                  <ImPencil2 onClick={console.log('update')} />
+                </div>
+                <div className="cards-list-link-header-options-delete">
+                  <ImBin onClick={console.log('delete')} />
+                </div>
+              </div>
             </div>
             <div className="cards-list-link-desc">
               {card.description}
