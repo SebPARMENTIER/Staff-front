@@ -1,21 +1,56 @@
 .cards {
   width: 100vw;
   height: 100vh;
-  padding-top: 10em;
-  text-align: center;
+  padding-top: 8em;
 
   &-desc {
     color: darkblue;
     padding-bottom: 2em;
+    text-align: center;
   }
 
   &-list {
     margin-bottom: 2em;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px saddlebrown;
+    margin: 1em;
+    padding: 0.5em 1em;
 
     &-link {
       text-decoration: none;
-      color: darkblue;
-      font-weight: bold;
+
+      &-header {
+        display: flex;
+        justify-content: space-between;
+
+        &-options {
+          font-weight: bold;
+          transform: rotate(180deg);
+        }
+  
+        &-title {
+          color: darkblue;
+          font-weight: bold;
+        }
+      }
+
+      &-desc {
+        font-size: 0.8em;
+        font-style: italic;
+      }
+    }
+  }
+  &-add {
+    text-align: center;
+    padding-top: 2em;
+
+    &-button {
+      background-color: #77b5fe;
+      color: white;
+      padding: 0.5em;
+      border-radius: 5px;
+      box-shadow: 5px 5px 5px saddlebrown;
     }
   }
 }

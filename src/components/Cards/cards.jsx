@@ -8,18 +8,33 @@ const Cards = ({ cardsName }) => {
     <div className="cards">
       <div className="cards-desc">Sélectionnez une carte pour voir le détail.</div>
       {cardsName.map((card) => (
-        <div
-          className="cards-list"
-          key={card.id}
-        >
+        <div className='cards-list'>
           <Link
+            key={card.id}
             className='cards-list-link'
             to={`/card/${card.id}`}
           >
-            {card.title}
-            </Link>
+            <div className="cards-list-link-header">
+              <div className="cards-list-link-header-title">
+                {card.title}
+              </div>
+              <div className="cards-list-link-header-options">...</div>
+            </div>
+            <div className="cards-list-link-desc">
+              {card.description}
+            </div>
+          </Link>
         </div>
       ))}
+      <div className="cards-add">
+        <button
+          className="cards-add-button"
+          onClick={console.log('coucou')}
+        >
+          Ajoutez une nouvelle carte.
+        </button>
+      </div>
+      
     </div>
   );
 };
