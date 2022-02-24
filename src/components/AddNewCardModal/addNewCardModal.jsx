@@ -30,40 +30,53 @@ const AddNewCardModal = ({
           className="addNewCardModal-container-form"
           onSubmit={handleSubmit}
         >
-          <div className="addNewCardModal-container-form-field">
-            <Field
-              className="addNewCardModal-container-form-field-title"
-              name="title"
-              placeholder="Nom de la carte..."
-              value={title}
-              onChange={changeField}
-            />
-            <FieldTextarea
-              className="addNewCardModal-container-form-field-description"
-              name="description"
-              placeholder="Description de la carte..."
-              value={description}
-              onChange={changeField}
-            />
-          </div>
-          {isAddNewCardModalError && (
-            <div className="addNewCardModal-container-form-error">
-              Une erreur s'est produite, veuillez réessayer.
+          {!isAddNewCardModalError && (
+            <div className="addNewCardModal-container-form-field">
+              <Field
+                className="addNewCardModal-container-form-field-title"
+                name="title"
+                placeholder="Nom de la carte..."
+                value={title}
+                onChange={changeField}
+              />
+              <FieldTextarea
+                className="addNewCardModal-container-form-field-description"
+                name="description"
+                placeholder="Description de la carte..."
+                value={description}
+                onChange={changeField}
+              />
             </div>
           )}
-          <div className="addNewCardModal-container-form-buttons">
-            <button
-              className="addNewCardModal-container-form-buttons-validate"
-              type="submit"
-            >
-              Valider
-            </button>
-            <button
-              className="addNewCardModal-container-form-buttons-escape"
-              onClick={handleOnClickEscapeAddNewCardModal}>
-              Annuler
-            </button>
-          </div>
+          {isAddNewCardModalError && (
+            <>
+              <div className="addNewCardModal-container-form-error">
+                Une erreur s'est produite, veuillez réessayer.
+              </div>
+              <div className="addNewCardModal-container-form-buttons">
+                <button
+                  className="addNewCardModal-container-form-buttons-escape"
+                  onClick={handleOnClickEscapeAddNewCardModal}>
+                  Annuler
+                </button>
+              </div>
+            </>
+          )}
+          {!isAddNewCardModalError && (
+            <div className="addNewCardModal-container-form-buttons">
+              <button
+                className="addNewCardModal-container-form-buttons-validate"
+                type="submit"
+              >
+                Valider
+              </button>
+              <button
+                className="addNewCardModal-container-form-buttons-escape"
+                onClick={handleOnClickEscapeAddNewCardModal}>
+                Annuler
+              </button>
+            </div>
+          )}
         </form>
       </div>
     </div>
