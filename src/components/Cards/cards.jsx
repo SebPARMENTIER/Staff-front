@@ -2,9 +2,18 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { ImPencil2, ImBin } from 'react-icons/im';
 
+import AddNewCardModal from '../../containers/AddNewCardModal';
+
 import './cards.scss';
 
-const Cards = ({ cardsName }) => {
+const Cards = ({
+  cardsName,
+  onClickAddNewCardModal,
+  openAddNewCardModal
+}) => {
+  const handleAddNewCardModal = () => {
+    onClickAddNewCardModal();
+  };
   return (
     <div className="cards">
       <div className="cards-desc">Sélectionnez une carte pour voir le détail.</div>
@@ -37,12 +46,12 @@ const Cards = ({ cardsName }) => {
       <div className="cards-add">
         <button
           className="cards-add-button"
-          onClick={console.log('coucou')}
+          onClick={handleAddNewCardModal}
         >
           Ajoutez une nouvelle carte.
         </button>
       </div>
-      
+      {openAddNewCardModal && <AddNewCardModal />}
     </div>
   );
 };
@@ -54,7 +63,9 @@ Cards.propTypes = {
       title: PropTypes.string.isRequired,
       description: PropTypes.string.isRequired
     }).isRequired,
-  ).isRequired
+  ).isRequired,
+  onClickAddNewCardModal: PropTypes.func.isRequired,
+  openAddNewCardModal: PropTypes.bool.isRequired
 };
 
 export default Cards;

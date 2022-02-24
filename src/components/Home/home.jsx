@@ -70,24 +70,33 @@ const Home = ({
       )}
       {isLogged && (
         <>
-          <div className="home-access-card">
-            <Link
-              className='home-access-card-link'
-              to='/cards'
-              onClick={handleGetAllCards}
-            >
-              Accéder aux cartes du restaurant
-            </Link>
-          </div>
-          <div className="home-access-menu">
-            <Link
-              className='home-access-menu-link'
-              to='/menus'
-              onClick={handleGetAllMenus}
-            >
-              Accéder aux menus du restaurant
-            </Link>
-          </div>
+          {isError && (
+            <div className="home-access-error">
+              Une erreur s'est produite, veuillez vous reconnecter.
+            </div>
+          )}
+          {!isError && (
+            <>
+              <div className="home-access-card">
+                <Link
+                  className='home-access-card-link'
+                  to='/cards'
+                  onClick={handleGetAllCards}
+                >
+                  Accéder aux cartes du restaurant
+                </Link>
+              </div>
+              <div className="home-access-menu">
+                <Link
+                  className='home-access-menu-link'
+                  to='/menus'
+                  onClick={handleGetAllMenus}
+                >
+                  Accéder aux menus du restaurant
+                </Link>
+              </div>
+            </>
+          )}
         </>
       )}
     </div>

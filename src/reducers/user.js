@@ -10,6 +10,7 @@ export const initialState = {
   email: '',
   password: '',
   firstname: '',
+  restaurant_id: '',
   token: null,
   isError: false,
   isLogged: false,
@@ -24,10 +25,11 @@ const reducer = (state = initialState, action = {}) => {
         [action.name]: action.value,
       };
     case LOGIN_SUCCESS:
-      const { firstname, accessToken } = action.data;
+      const { firstname, restaurant_id, accessToken } = action.data;
       return {
         ...state,
         firstname,
+        restaurant_id,
         token: accessToken,
         isError: false,
         isLogged: true,
@@ -50,6 +52,7 @@ const reducer = (state = initialState, action = {}) => {
       email: '',
       password: '',
       firstname: '',
+      restaurant_id: '',
       token: null,
       isError: false,
       isLogged: false,

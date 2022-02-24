@@ -27,23 +27,21 @@
     }
   }
 
-  &-access-card {
-    margin-bottom: 2em;
+  &-access {
 
-    &-link {
-      text-decoration: none;
-      color: darkblue;
+    &-error {
+      text-align: center;
       font-weight: bold;
     }
-  }
+    
+    &-card, &-menu {
+      margin-bottom: 2em;
 
-  &-access-menu {
-    margin-bottom: 2em;
-
-    &-link {
-      text-decoration: none;
-      color: darkblue;
-      font-weight: bold;
+      &-link {
+        text-decoration: none;
+        color: darkblue;
+        font-weight: bold;
+      }
     }
   }
 }
