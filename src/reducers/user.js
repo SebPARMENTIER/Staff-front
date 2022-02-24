@@ -1,7 +1,9 @@
 import {
   SET_INPUT_VALUE,
   LOGIN_SUCCESS,
-  LOGIN_ERROR
+  LOGIN_ERROR,
+  CLICK_ON_BUTTON_LOGOUT,
+  CLICK_ON_LOGOUT
 } from '../actions/user';
 
 export const initialState = {
@@ -10,7 +12,8 @@ export const initialState = {
   firstname: '',
   token: null,
   isError: false,
-  isLogged: false
+  isLogged: false,
+  openLogout: false
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -36,6 +39,22 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         isError: true,
       };
+    case CLICK_ON_BUTTON_LOGOUT:
+      return {
+        ...state,
+        openLogout: !state.openLogout,
+      };
+    case CLICK_ON_LOGOUT:
+    return {
+      ...state,
+      email: '',
+      password: '',
+      firstname: '',
+      token: null,
+      isError: false,
+      isLogged: false,
+      openLogout: false
+    };
     default:
       return state;
   }

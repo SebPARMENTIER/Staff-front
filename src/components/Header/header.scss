@@ -22,7 +22,27 @@
 
     &-rightside {
       padding-right: 1em;
-      color: white;
+      display: flex;
+
+      &-welcome {
+        color: white;
+        padding-right: 0.5em;
+      }
+
+      &-logout {
+        border: none;
+        background-color: #77b5fe;
+        color: white;
+        transition: transform 1s;
+
+        &-open {
+          border: none;
+          background-color: #77b5fe;
+          color: white;
+          transform: rotate(-180deg);
+          transition: transform 1s;
+        }
+      }
     }
   }
 }

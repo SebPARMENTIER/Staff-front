@@ -3,6 +3,8 @@ import {
   GET_ALL_MENUS_ERROR
 } from "../actions/menus";
 
+import { CLICK_ON_LOGOUT } from '../actions/user';
+
 export const initialState = {
   menusName: [],
   isError: false
@@ -19,6 +21,12 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         isError: true
+      };
+    case CLICK_ON_LOGOUT:
+      return {
+        ...state,
+        menusName: [],
+        isError: false
       };
     default:
       return state;

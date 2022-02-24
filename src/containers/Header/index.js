@@ -2,9 +2,18 @@ import { connect } from "react-redux";
 
 import Header from "../../components/Header/header";
 
+import { clickOnButtonLogout } from '../../actions/user';
+
 const mapStateToProps = (state) => ({
   firstname: state.user.firstname,
-  isLogged: state.user.isLogged
+  isLogged: state.user.isLogged,
+  openLogout: state.user.openLogout
 });
 
-export default connect(mapStateToProps)(Header);
+const mapDispatchToProps = (dispatch) => ({
+  onClickArrow: () => {
+    dispatch(clickOnButtonLogout());
+  }
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);
