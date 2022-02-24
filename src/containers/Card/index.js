@@ -13,8 +13,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  onClickUpdateCardModal: () => {
-    dispatch(clickOnButtonUpdateCard());
+  onClickUpdateCardModal: (value1, value2) => {
+    dispatch(clickOnButtonUpdateCard(value1, value2));
   },
   getCardInfos: (value) => {
     dispatch(cardInfosValue(value));

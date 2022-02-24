@@ -1,0 +1,75 @@
+.updateCardModal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100vw;
+  background-color: rgb(129, 125, 125, 0.7);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+
+  &-container {
+    background-color: #e1c699;
+    width: 90%;
+    height: 30%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 5px 5px saddlebrown;
+
+    &-header {
+      font-size: 1.2em;
+      color: saddlebrown;
+      font-weight: bold;
+      margin-bottom: 2em;
+    }
+
+    &-form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      &-field {
+        margin-bottom: 1.5em;
+
+        &-title {
+          width: 95%;
+          margin-bottom: 1.5em;
+          padding: 0.2em;
+        }
+      }
+
+      &-buttons {
+        width: 95%;
+        display: flex;
+        justify-content: space-around;
+
+        &-validate, &-escape {
+          background-color: #77b5fe;
+          color: white;
+          padding: 0.5em;
+          border: none;
+          border-radius: 10px;
+          box-shadow: 5px 5px 5px saddlebrown;
+        }
+      }
+
+      &-error {
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: 2em;
+      }
+    }
+  }
+}
+
+textarea {
+  width: 95%;
+  resize: none;
+  padding: 0.2em;
+}

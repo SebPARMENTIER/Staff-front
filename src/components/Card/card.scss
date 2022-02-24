@@ -1,26 +1,44 @@
 .card {
-  padding: 6em 0;
-  text-align: center;
+  padding: 4em 0;
 
-  &-title {
-    font-size: 1.2em;
-    font-weight: bold;
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.2em 1em;
+    
+    &-title {
+      font-size: 1.2em;
+      font-weight: bold;
+      color: darkblue;
+    }
+
+    &-options {
+      display: flex;
+      justify-content: space-around;
+      color: darkblue;
+
+      &-update {
+        margin-right: 1em;
+      }
+    }
   }
 
   &-description {
     font-size: 0.8em;
     font-style: italic;
-    padding: 0 0.5em 1em 0.5em;
+    margin: 0.2em 1em;
   }
 
   &-drinks {
     margin: 1em;
-    padding: 1em 0;
+    padding: 0.5em 0;
     border: 1px solid black;
     border-radius: 5px;
 
     &-desc {
       text-decoration: underline;
+      text-align: center;
       font-weight: 500;
       padding-bottom: 1em;
     }
@@ -46,12 +64,13 @@
 
   &-foods {
     margin: 1em;
-    padding: 1em 0;
+    padding: 0.5em 0;
     border: 1px solid black;
     border-radius: 5px;
 
     &-desc {
       text-decoration: underline;
+      text-align: center;
       font-weight: 500;
       padding-bottom: 1em;
     }

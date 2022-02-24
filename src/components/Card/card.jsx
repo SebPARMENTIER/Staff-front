@@ -15,7 +15,7 @@ const Card = ({
   const { id } = useParams();
   const cardInfos = cardsName.find(element => element.id == id);
   const handleUpdateCardModal = () => {
-    onClickUpdateCardModal();
+    onClickUpdateCardModal(cardInfos.title, cardInfos.description);
     getCardInfos(cardInfos);
   };
   return (

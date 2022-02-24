@@ -26,6 +26,8 @@ const reducer = (state = initialState, action = {}) => {
     case CLICK_ON_BUTTON_UPDATE_CARD:
       return {
         ...state,
+        newTitle: action.value1,
+        newDescription: action.value2,
         openUpdateCardModal: true
       };
     case SET_UPDATE_CARD_INPUT_VALUE:

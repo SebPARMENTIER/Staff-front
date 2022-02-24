@@ -43,7 +43,11 @@ export const createAddNewCardSuccesAction = () => ({ type: CREATE_ADD_NEW_CARD_S
 
 export const createAddNewCardErrorAction = () => ({ type: CREATE_ADD_NEW_CARD_ERROR });
 
-export const clickOnButtonUpdateCard = () => ({ type: CLICK_ON_BUTTON_UPDATE_CARD});
+export const clickOnButtonUpdateCard = (value1, value2) => ({
+  type: CLICK_ON_BUTTON_UPDATE_CARD,
+  value1: value1,
+  value2: value2
+});
 
 export const createUpdateCardSetInputValueAction = (newValue, name) => ({
   type: SET_UPDATE_CARD_INPUT_VALUE,

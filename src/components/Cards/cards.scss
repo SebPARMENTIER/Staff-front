@@ -19,37 +19,19 @@
 
     &-link {
       text-decoration: none;
-
-      &-header {
-        display: flex;
-        justify-content: space-between;
-        
-        &-options {
-          width: 15%;
-          display: flex;
-          justify-content: space-between;
-
-          &-update {
-            z-index: 1;
-          }
-
-          &-delete {
-            z-index: 1;
-          }
-        }
-  
+      text-align: center;
+      
         &-title {
           color: darkblue;
           font-weight: bold;
         }
-      }
 
-      &-desc {
-        font-size: 0.8em;
-        font-style: italic;
+        &-desc {
+          font-size: 0.8em;
+          font-style: italic;
+        }
       }
     }
-  }
 
   &-add {
     text-align: center;
