@@ -4,12 +4,14 @@ import Card from '../../components/Card/card';
 
 import {
   clickOnButtonUpdateCard,
-  cardInfosValue
+  cardInfosValue,
+  clickOnButtonDeleteCard
 } from '../../actions/cards';
 
 const mapStateToProps = (state) => ({
   cardsName: state.cards.cardsName,
-  openUpdateCardModal: state.card.openUpdateCardModal
+  openUpdateCardModal: state.card.openUpdateCardModal,
+  openDeleteCardModal: state.card.openDeleteCardModal
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -18,6 +20,9 @@ const mapDispatchToProps = (dispatch) => ({
   },
   getCardInfos: (value) => {
     dispatch(cardInfosValue(value));
+  },
+  onClickDeleteCardModal: () => {
+    dispatch(clickOnButtonDeleteCard());
   }
 });
 

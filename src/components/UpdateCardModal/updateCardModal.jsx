@@ -72,7 +72,8 @@ const UpdateCardModal = ({
               </button>
               <button
                 className="updateCardModal-container-form-buttons-escape"
-                onClick={handleOnClickEscapeUpdateCardModal}>
+                onClick={handleOnClickEscapeUpdateCardModal}
+              >
                 Annuler
               </button>
             </div>

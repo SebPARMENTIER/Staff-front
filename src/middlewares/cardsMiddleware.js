@@ -4,13 +4,16 @@ import {
   GET_ALL_CARDS,
   CREATE_ADD_NEW_CARD,
   CREATE_UPDATE_CARD,
+  CREATE_DELETE_CARD,
   createGellAllCardsSuccessAction,
   createGellAllCardsErrorAction,
   createAddNewCardSuccesAction,
   createAddNewCardErrorAction,
   createGetAllCardsAction,
   createUpdateCardSuccesAction,
-  createUpdateCardErrorAction
+  createUpdateCardErrorAction,
+  createDeleteCardSuccesAction,
+  createDeleteCardErrorAction
 } from '../actions/cards';
 
 const cardsMiddleware = (store) => (next) => (action) => {
@@ -50,7 +53,7 @@ const cardsMiddleware = (store) => (next) => (action) => {
           store.dispatch(createGetAllCardsAction());
         })
         .catch(() => {
-          store.dispatch(createAddNewCardErrorAction())
+          store.dispatch(createAddNewCardErrorAction());
         });
       break;
     };
@@ -74,10 +77,29 @@ const cardsMiddleware = (store) => (next) => (action) => {
           store.dispatch(createGetAllCardsAction());
         })
         .catch(() => {
-          store.dispatch(createUpdateCardErrorAction())
+          store.dispatch(createUpdateCardErrorAction());
         });
       break;
     };
+    case CREATE_DELETE_CARD: {
+      const config = {
+        method: 'delete',
+        url: `https://seb-stan.herokuapp.com/api/v1/card/${state.card.cardInfos.id}`,
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${state.user.token}`,
+        },
+      };
+      axios(config)
+        .then((response) => {
+          store.dispatch(createDeleteCardSuccesAction());
+          store.dispatch(createGetAllCardsAction());
+        })
+        .catch(() => {
+          store.dispatch(createDeleteCardErrorAction());
+        });
+      break;
+    }
     default:
       next(action);
   }

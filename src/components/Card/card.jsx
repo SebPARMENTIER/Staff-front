@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { ImPencil2, ImBin } from 'react-icons/im';
 
 import UpdateCardModal from '../../containers/UpdateCardModal';
+import DeleteCardModal from '../../containers/DeleteCardModal';
 
 import './card.scss';
 
@@ -10,13 +11,18 @@ const Card = ({
   cardsName,
   onClickUpdateCardModal,
   getCardInfos,
-  openUpdateCardModal
+  openUpdateCardModal,
+  onClickDeleteCardModal,
+  openDeleteCardModal
 }) => {
   const { id } = useParams();
   const cardInfos = cardsName.find(element => element.id == id);
   const handleUpdateCardModal = () => {
     onClickUpdateCardModal(cardInfos.title, cardInfos.description);
     getCardInfos(cardInfos);
+  };
+  const handleDeleteCardModal = () => {
+    onClickDeleteCardModal();
   };
   return (
     <div className="card">
@@ -29,7 +35,7 @@ const Card = ({
             <ImPencil2 onClick={handleUpdateCardModal} />
           </div>
           <div className="card-header-options-delete">
-            <ImBin onClick={console.log('delete')} />
+            <ImBin onClick={handleDeleteCardModal} />
           </div>
         </div>
       </div>
@@ -79,6 +85,7 @@ const Card = ({
         ))}
       </div>
       {openUpdateCardModal && <UpdateCardModal />}
+      {openDeleteCardModal && <DeleteCardModal />}
     </div>
   );
 };
@@ -93,7 +100,9 @@ Card.propTypes = {
   ).isRequired,
   onClickUpdateCardModal: PropTypes.func.isRequired,
   getCardInfos: PropTypes.func.isRequired,
-  openUpdateCardModal: PropTypes.bool.isRequired
+  onClickDeleteCardModal: PropTypes.func.isRequired,
+  openUpdateCardModal: PropTypes.bool.isRequired,
+  openDeleteCardModal: PropTypes.bool.isRequired
 };
 
 export default Card;
