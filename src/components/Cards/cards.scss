@@ -1,7 +1,7 @@
 .cards {
   width: 100vw;
   height: 100vh;
-  padding-top: 8em;
+  padding-top: 6em;
 
   &-desc {
     color: darkblue;
@@ -23,11 +23,19 @@
       &-header {
         display: flex;
         justify-content: space-between;
-
+        
         &-options {
           width: 15%;
           display: flex;
           justify-content: space-between;
+
+          &-update {
+            z-index: 1;
+          }
+
+          &-delete {
+            z-index: 1;
+          }
         }
   
         &-title {
@@ -42,6 +50,7 @@
       }
     }
   }
+
   &-add {
     text-align: center;
     padding-top: 2em;

@@ -3,17 +3,23 @@ import { Link } from 'react-router-dom';
 import { ImPencil2, ImBin } from 'react-icons/im';
 
 import AddNewCardModal from '../../containers/AddNewCardModal';
+import UpdateCardModal from '../../containers/UpdateCardModal';
 
 import './cards.scss';
 
 const Cards = ({
   cardsName,
   onClickAddNewCardModal,
-  openAddNewCardModal
+  openAddNewCardModal,
+  onClickUpdateCardModal,
+  openUpdateCardModal
 }) => {
   const handleAddNewCardModal = () => {
     onClickAddNewCardModal();
   };
+  const handleUpdateCardModal = () => {
+    onClickUpdateCardModal();
+  }
   return (
     <div className="cards">
       <div className="cards-desc">Sélectionnez une carte pour voir le détail.</div>
@@ -30,7 +36,7 @@ const Cards = ({
               </div>
               <div className="cards-list-link-header-options">
                 <div className="cards-list-link-header-options-update">
-                  <ImPencil2 onClick={console.log('update')} />
+                  <ImPencil2 onClick={handleUpdateCardModal} />
                 </div>
                 <div className="cards-list-link-header-options-delete">
                   <ImBin onClick={console.log('delete')} />
@@ -52,6 +58,7 @@ const Cards = ({
         </button>
       </div>
       {openAddNewCardModal && <AddNewCardModal />}
+      {openUpdateCardModal && <UpdateCardModal />}
     </div>
   );
 };
@@ -65,7 +72,9 @@ Cards.propTypes = {
     }).isRequired,
   ).isRequired,
   onClickAddNewCardModal: PropTypes.func.isRequired,
-  openAddNewCardModal: PropTypes.bool.isRequired
+  onClickUpdateCardModal: PropTypes.func.isRequired,
+  openAddNewCardModal: PropTypes.bool.isRequired,
+  openUpdateCardModal: PropTypes.bool.isRequired
 };
 
 export default Cards;

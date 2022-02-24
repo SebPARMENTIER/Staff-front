@@ -5,7 +5,7 @@ import {
   SET_ADD_NEW_CARD_INPUT_VALUE,
   CREATE_ADD_NEW_CARD_SUCCESS,
   CREATE_ADD_NEW_CARD_ERROR,
-  CLICK_ON_BUTTON_ESCAPE_ADD_NEW_CARD
+  CLICK_ON_BUTTON_ESCAPE_ADD_NEW_CARD,
 } from "../actions/cards";
 
 import { CLICK_ON_LOGOUT } from '../actions/user';
@@ -16,7 +16,12 @@ export const initialState = {
   openAddNewCardModal: false,
   title: '',
   description: '',
-  isAddNewCardModalError: false
+  isAddNewCardModalError: false,
+  openUpdateCardModal: false,
+  cardId: '',
+  newTitle: '',
+  newDescription: '',
+  isUpdateCardModalError: false
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -39,7 +44,11 @@ const reducer = (state = initialState, action = {}) => {
         openAddNewCardModal: false,
         title: '',
         description: '',
-        isAddNewCardModalError: false
+        isAddNewCardModalError: false,
+        openUpdateCardModal: false,
+        newTitle: '',
+        newDescription: '',
+        isUpdateCardModalError: false
       };
     case CLICK_ON_BUTTON_ADD_NEW_CARD:
       return {
@@ -49,7 +58,7 @@ const reducer = (state = initialState, action = {}) => {
     case SET_ADD_NEW_CARD_INPUT_VALUE:
       return {
         ...state,
-        [action.name]: action.value,
+        [action.name]: action.value
       };
     case CREATE_ADD_NEW_CARD_SUCCESS:
       return {

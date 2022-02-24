@@ -3,11 +3,14 @@ import axios from "axios";
 import {
   GET_ALL_CARDS,
   CREATE_ADD_NEW_CARD,
+  CREATE_UPDATE_CARD,
   createGellAllCardsSuccessAction,
   createGellAllCardsErrorAction,
   createAddNewCardSuccesAction,
   createAddNewCardErrorAction,
-  createGetAllCardsAction
+  createGetAllCardsAction,
+  createUpdateCardSuccesAction,
+  createUpdateCardErrorAction
 } from '../actions/cards';
 
 const cardsMiddleware = (store) => (next) => (action) => {
@@ -48,6 +51,30 @@ const cardsMiddleware = (store) => (next) => (action) => {
         })
         .catch(() => {
           store.dispatch(createAddNewCardErrorAction())
+        });
+      break;
+    };
+    case CREATE_UPDATE_CARD: {
+      const config = {
+        method: 'patch',
+        url: 'https://seb-stan.herokuapp.com/api/v1/card',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${state.user.token}`,
+        },
+        data: {
+          id: state.card.cardInfos.id,
+          title: state.card.newTitle,
+          description: state.card.newDescription,
+        },
+      };
+      axios(config)
+        .then((response) => {
+          store.dispatch(createUpdateCardSuccesAction());
+          store.dispatch(createGetAllCardsAction());
+        })
+        .catch(() => {
+          store.dispatch(createUpdateCardErrorAction())
         });
       break;
     };

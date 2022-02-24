@@ -1,26 +1,44 @@
 import PropTypes from 'prop-types';
 import { useParams } from 'react-router-dom';
+import { ImPencil2, ImBin } from 'react-icons/im';
+
+import UpdateCardModal from '../../containers/UpdateCardModal';
 
 import './card.scss';
 
 const Card = ({
   cardsName,
+  onClickUpdateCardModal,
+  getCardInfos,
+  openUpdateCardModal
 }) => {
   const { id } = useParams();
-
-  const cardName = cardsName.find(element => element.id == id);
-
+  const cardInfos = cardsName.find(element => element.id == id);
+  const handleUpdateCardModal = () => {
+    onClickUpdateCardModal();
+    getCardInfos(cardInfos);
+  };
   return (
     <div className="card">
-      <div className="card-title">
-        {cardName.title}
+      <div className="card-header">
+        <div className="card-header-title">
+          {cardInfos.title}
+        </div>
+        <div className="card-header-options">
+          <div className="card-header-options-update">
+            <ImPencil2 onClick={handleUpdateCardModal} />
+          </div>
+          <div className="card-header-options-delete">
+            <ImBin onClick={console.log('delete')} />
+          </div>
+        </div>
       </div>
       <div className="card-description">
-        {cardName.description}
+        {cardInfos.description}
       </div>
       <div className="card-drinks">
         <div className="card-drinks-desc">Nos boissons</div>
-        {cardName.drinks_card.map((drink) => (
+        {cardInfos.drinks_card.map((drink) => (
           <div
             key={drink.id}
             className="card-drinks-drink"
@@ -41,7 +59,7 @@ const Card = ({
       </div>
       <div className="card-foods">
         <div className="card-foods-desc">Nos plats</div>
-        {cardName.foods_card.map((food) => (
+        {cardInfos.foods_card.map((food) => (
           <div
             key={food.id}
             className="card-foods-food"
@@ -60,6 +78,7 @@ const Card = ({
           </div>
         ))}
       </div>
+      {openUpdateCardModal && <UpdateCardModal />}
     </div>
   );
 };
@@ -71,7 +90,10 @@ Card.propTypes = {
       title: PropTypes.string.isRequired,
       description: PropTypes.string.isRequired
     }).isRequired,
-  ).isRequired
+  ).isRequired,
+  onClickUpdateCardModal: PropTypes.func.isRequired,
+  getCardInfos: PropTypes.func.isRequired,
+  openUpdateCardModal: PropTypes.bool.isRequired
 };
 
 export default Card;
