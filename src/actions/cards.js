@@ -19,6 +19,7 @@ export const CREATE_DELETE_CARD = 'CREATE_DELETE_CARD';
 export const CLICK_ON_BUTTON_ESCAPE_DELETE_CARD = 'CLICK_ON_BUTTON_ESCAPE_DELETE_CARD';
 export const CREATE_DELETE_CARD_SUCCESS = 'CREATE_DELETE_CARD_SUCCESS';
 export const CREATE_DELETE_CARD_ERROR = 'CREATE_DELETE_CARD_ERROR';
+export const CARD_DELETE_SUCCESS_TO_FALSE = 'CARD_DELETE_SUCCESS_TO_FALSE';
 
 export const createGetAllCardsAction = () => ({ type: GET_ALL_CARDS });
 
@@ -67,7 +68,10 @@ export const createUpdateCardSuccesAction = () => ({ type: CREATE_UPDATE_CARD_SU
 
 export const createUpdateCardErrorAction = () => ({ type: CREATE_UPDATE_CARD_ERROR });
 
-export const clickOnButtonDeleteCard = () => ({ type: CLICK_ON_BUTTON_DELETE_CARD });
+export const clickOnButtonDeleteCard = (value) => ({
+  type: CLICK_ON_BUTTON_DELETE_CARD,
+  value: value
+});
 
 export const createDeleteCardAction = () => ({ type: CREATE_DELETE_CARD });
 
@@ -76,3 +80,5 @@ export const clickOnButtonEscapeDeleteCard = () => ({ type: CLICK_ON_BUTTON_ESCA
 export const createDeleteCardSuccesAction = () => ({ type: CREATE_DELETE_CARD_SUCCESS });
 
 export const createDeleteCardErrorAction = () => ({ type: CREATE_DELETE_CARD_ERROR });
+
+export const cardDeleteSuccessToFalse = () => ({ type: CARD_DELETE_SUCCESS_TO_FALSE });

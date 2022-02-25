@@ -5,13 +5,15 @@ import Card from '../../components/Card/card';
 import {
   clickOnButtonUpdateCard,
   cardInfosValue,
-  clickOnButtonDeleteCard
+  clickOnButtonDeleteCard,
+  cardDeleteSuccessToFalse
 } from '../../actions/cards';
 
 const mapStateToProps = (state) => ({
   cardsName: state.cards.cardsName,
   openUpdateCardModal: state.card.openUpdateCardModal,
-  openDeleteCardModal: state.card.openDeleteCardModal
+  openDeleteCardModal: state.card.openDeleteCardModal,
+  cardDeletesSuccess: state.card.cardDeletesSuccess
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -21,8 +23,11 @@ const mapDispatchToProps = (dispatch) => ({
   getCardInfos: (value) => {
     dispatch(cardInfosValue(value));
   },
-  onClickDeleteCardModal: () => {
-    dispatch(clickOnButtonDeleteCard());
+  onClickDeleteCardModal: (value) => {
+    dispatch(clickOnButtonDeleteCard(value));
+  },
+  setCardDeleteSuccessToFalse: () => {
+    dispatch(cardDeleteSuccessToFalse());
   }
 });
 

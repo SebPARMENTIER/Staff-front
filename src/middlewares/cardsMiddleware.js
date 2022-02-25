@@ -84,7 +84,7 @@ const cardsMiddleware = (store) => (next) => (action) => {
     case CREATE_DELETE_CARD: {
       const config = {
         method: 'delete',
-        url: `https://seb-stan.herokuapp.com/api/v1/card/${state.card.cardInfos.id}`,
+        url: `https://seb-stan.herokuapp.com/api/v1/card/${state.card.cardId}`,
         headers: {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${state.user.token}`,

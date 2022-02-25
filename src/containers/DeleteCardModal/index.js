@@ -8,7 +8,8 @@ import {
 } from '../../actions/cards';
 
 const mapStateToProps = (state) => ({
-  isDeleteCardModalError: state.card.isDeleteCardModalError,
+  cardDeletesSuccess : state.card.cardDeletesSuccess,
+  isDeleteCardModalError: state.card.isDeleteCardModalError
 });
 
 const mapDispatchToProps = (dispatch) => ({

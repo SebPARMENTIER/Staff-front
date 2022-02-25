@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 import { ImPencil2, ImBin } from 'react-icons/im';
 
 import UpdateCardModal from '../../containers/UpdateCardModal';
@@ -13,8 +14,11 @@ const Card = ({
   getCardInfos,
   openUpdateCardModal,
   onClickDeleteCardModal,
-  openDeleteCardModal
+  openDeleteCardModal,
+  cardDeletesSuccess,
+  setCardDeleteSuccessToFalse
 }) => {
+  let navigate = useNavigate();
   const { id } = useParams();
   const cardInfos = cardsName.find(element => element.id == id);
   const handleUpdateCardModal = () => {
@@ -22,8 +26,15 @@ const Card = ({
     getCardInfos(cardInfos);
   };
   const handleDeleteCardModal = () => {
-    onClickDeleteCardModal();
+    onClickDeleteCardModal(cardInfos.id);
   };
+  useEffect(() => {
+    console.log(cardDeletesSuccess);
+    if (cardDeletesSuccess) {
+      navigate('/cards');
+      setCardDeleteSuccessToFalse();
+    }
+  }, [cardDeletesSuccess]);
   return (
     <div className="card">
       <div className="card-header">
@@ -101,8 +112,10 @@ Card.propTypes = {
   onClickUpdateCardModal: PropTypes.func.isRequired,
   getCardInfos: PropTypes.func.isRequired,
   onClickDeleteCardModal: PropTypes.func.isRequired,
+  setCardDeleteSuccessToFalse: PropTypes.func.isRequired,
   openUpdateCardModal: PropTypes.bool.isRequired,
-  openDeleteCardModal: PropTypes.bool.isRequired
+  openDeleteCardModal: PropTypes.bool.isRequired,
+  cardDeletesSuccess: PropTypes.bool.isRequired
 };
 
 export default Card;

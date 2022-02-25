@@ -6,7 +6,7 @@ import { clickOnButtonAddNewCard } from '../../actions/cards';
 
 const mapStateToProps = (state) => ({
   cardsName: state.cards.cardsName,
-  openAddNewCardModal: state.cards.openAddNewCardModal,
+  openAddNewCardModal: state.cards.openAddNewCardModal
 });
 
 const mapDispatchToProps = (dispatch) => ({

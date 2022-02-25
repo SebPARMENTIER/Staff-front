@@ -17,9 +17,11 @@ const Cards = ({
     <div className="cards">
       <div className="cards-desc">Sélectionnez une carte pour voir le détail.</div>
       {cardsName.map((card) => (
-        <div className='cards-list'>
+        <div
+          key={card.id}
+          className='cards-list'
+        >
           <Link
-            key={card.id}
             className='cards-list-link'
             to={`/card/${card.id}`}
           >

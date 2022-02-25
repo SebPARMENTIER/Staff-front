@@ -8,7 +8,8 @@ import {
   CLICK_ON_BUTTON_DELETE_CARD,
   CREATE_DELETE_CARD_SUCCESS,
   CREATE_DELETE_CARD_ERROR,
-  CLICK_ON_BUTTON_ESCAPE_DELETE_CARD
+  CLICK_ON_BUTTON_ESCAPE_DELETE_CARD,
+  CARD_DELETE_SUCCESS_TO_FALSE
 } from "../actions/cards";
 
 export const initialState = {
@@ -19,7 +20,8 @@ export const initialState = {
   newDescription: '',
   isUpdateCardModalError: false,
   openDeleteCardModal: false,
-  isDeleteCardModalError: false
+  isDeleteCardModalError: false,
+  cardDeletesSuccess : false
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -65,17 +67,20 @@ const reducer = (state = initialState, action = {}) => {
     case CLICK_ON_BUTTON_DELETE_CARD:
       return {
         ...state,
+        cardId: action.value,
         openDeleteCardModal: true
       };
     case CREATE_DELETE_CARD_SUCCESS:
       return {
         ...state,
         openDeleteCardModal: false,
+        cardDeletesSuccess : true,
         isDeleteCardModalError: false
       };
     case CREATE_DELETE_CARD_ERROR:
       return {
         ...state,
+        cardDeletesSuccess : false,
         isDeleteCardModalError: true
       };
     case CLICK_ON_BUTTON_ESCAPE_DELETE_CARD:
@@ -83,6 +88,11 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         openDeleteCardModal: false,
         isDeleteCardModalError: false
+      };
+    case CARD_DELETE_SUCCESS_TO_FALSE:
+      return {
+        ...state,
+        cardDeletesSuccess: false
       };
     default:
       return state;
