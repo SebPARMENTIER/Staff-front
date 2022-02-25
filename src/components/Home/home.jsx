@@ -29,6 +29,7 @@ const Home = ({
     <div className="home">
       {!isLogged && (
         <>
+          <div className="home-header">stan</div>
           <div className="home-desc">Bonjour, veuillez saisir vos identifiants pour vous connecter.</div>
           <div className="home-connexion">
             <form
@@ -77,7 +78,8 @@ const Home = ({
           )}
           {!isError && (
             <>
-              <div className="home-access-card">
+            <div className="home-access">
+            <div className="home-access-card">
                 <Link
                   className='home-access-card-link'
                   to='/cards'
@@ -95,6 +97,8 @@ const Home = ({
                   Accéder aux menus du restaurant
                 </Link>
               </div>
+            </div>
+              
             </>
           )}
         </>

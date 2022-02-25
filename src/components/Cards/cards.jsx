@@ -39,7 +39,7 @@ const Cards = ({
           className="cards-add-button"
           onClick={handleAddNewCardModal}
         >
-          Ajoutez une nouvelle carte.
+          Ajoutez une nouvelle carte
         </button>
       </div>
       {openAddNewCardModal && <AddNewCardModal />}

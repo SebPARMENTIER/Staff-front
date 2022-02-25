@@ -3,12 +3,21 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  padding-top: 6em;
+
+  &-header {
+    font-size: 3em;
+    font-weight: bold;
+    padding-bottom: 2em;
+    color: white;
+    text-shadow: 5px 5px 5px #ff1616;
+  }
 
   &-desc {
+    color: white;
     text-align: center;
-    padding-bottom: 3em;
+    padding: 0 1em 3em 1em;
   }
 
   &-connexion {
@@ -17,30 +26,59 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
+      align-items: center;
 
       &-field {
+        padding-bottom: 2em;
 
         &-email, &-password {
           margin-bottom: 1em;
+          padding: 0.2em;
         }
+      }
+
+      &-button {
+        background-color: #ff1616;
+        color: white;
+        text-shadow: 1px 1px 1px #0e4bef;
+        font-size: 1em;
+        padding: 0.5em 4em;
+        border: 5px solid #ff5757;
+        border-radius: 10px;
+        box-shadow: 3px 3px 3px #003bda;
+      }
+
+      &-error {
+        color: white;
+        padding-bottom: 2em;
       }
     }
   }
 
   &-access {
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
     &-error {
+      padding-top: 5em;
       text-align: center;
-      font-weight: bold;
+      color: white;
     }
     
     &-card, &-menu {
       margin-bottom: 2em;
+      padding: 1em 0.5em;
+      background-color: #ff1616;
+      border: 5px solid #ff5757;
+      border-radius: 10px;
+      box-shadow: 5px 5px 5px #003bda;
 
       &-link {
         text-decoration: none;
-        color: darkblue;
-        font-weight: bold;
+        color: white;
+        text-shadow: 1px 1px 1px #0e4bef;
       }
     }
   }

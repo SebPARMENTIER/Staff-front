@@ -4,14 +4,15 @@
   padding-top: 6em;
 
   &-desc {
-    color: darkblue;
+    color: white;
     padding-bottom: 2em;
     text-align: center;
   }
 
   &-list {
     margin-bottom: 2em;
-    border: 1px solid black;
+    background-color: #e1c699;
+    border: 5px solid white;
     border-radius: 5px;
     box-shadow: 5px 5px 5px saddlebrown;
     margin: 1em;
@@ -20,9 +21,9 @@
     &-link {
       text-decoration: none;
       text-align: center;
+      color: darkblue;
       
         &-title {
-          color: darkblue;
           font-weight: bold;
         }
 
@@ -38,12 +39,14 @@
     padding-top: 2em;
 
     &-button {
-      background-color: #77b5fe;
-      color: white;
-      padding: 0.5em;
-      border: none;
-      border-radius: 5px;
-      box-shadow: 5px 5px 5px saddlebrown;
+      background-color: #ff1616;
+        color: white;
+        text-shadow: 1px 1px 1px #0e4bef;
+        font-size: 1em;
+        padding: 0.5em;
+        border: 5px solid #ff5757;
+        border-radius: 10px;
+        box-shadow: 3px 3px 3px #003bda;
     }
   }
 }
