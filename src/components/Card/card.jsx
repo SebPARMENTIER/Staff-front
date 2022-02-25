@@ -54,18 +54,31 @@ const Card = ({
         {cardInfos.description}
       </div>
       <div className="card-drinks">
-        <div className="card-drinks-desc">Nos boissons</div>
+        <div className="card-drinks-header">
+          <div className="card-drinks-header-desc">Nos boissons</div>
+          <div className="card-drinks-header-add">+</div>
+        </div>
         {cardInfos.drinks_card.map((drink) => (
           <div
             key={drink.id}
             className="card-drinks-drink"
           >
             <div className="card-drinks-drink-header">
-              <div className="card-drinks-drink-header-title">
-                {drink.title}
+              <div className="card-drinks-drink-header-elements">
+                <div className="card-drinks-drink-header-elements-title">
+                  {drink.title}
+                </div>
+                <div className="card-drinks-drink-header-elements-price">
+                  {drink.price}
+                </div>
               </div>
-              <div className="card-drinks-drink-header-price">
-                {drink.price}
+              <div className="card-drinks-drink-header-options">
+                <div className="card-drinks-drink-header-options-update">
+                  <ImPencil2 />
+                </div>
+                <div className="card-drinks-drink-header-options-delete">
+                  <ImBin />
+                </div>
               </div>
             </div>
             <div className="card-drinks-drink-description">
@@ -75,18 +88,31 @@ const Card = ({
         ))}
       </div>
       <div className="card-foods">
-        <div className="card-foods-desc">Nos plats</div>
+        <div className="card-foods-header">
+          <div className="card-foods-header-desc">Nos plats</div>
+          <div className="card-foods-header-add">+</div>
+        </div>
         {cardInfos.foods_card.map((food) => (
           <div
             key={food.id}
             className="card-foods-food"
           >
             <div className="card-foods-food-header">
-              <div className="card-foods-food-header-title">
-                {food.title}
+              <div className="card-foods-food-header-elements">
+                <div className="card-foods-food-header-elements-title">
+                  {food.title}
+                </div>
+                <div className="card-foods-food-header-elements-price">
+                  {food.price}
+                </div>
               </div>
-              <div className="card-foods-food-header-price">
-                {food.price}
+              <div className="card-foods-food-header-options">
+                <div className="card-foods-food-header-options-update">
+                  <ImPencil2 />
+                </div>
+                <div className="card-foods-food-header-options-delete">
+                  <ImBin />
+                </div>
               </div>
             </div>
             <div className="card-foods-food-description">

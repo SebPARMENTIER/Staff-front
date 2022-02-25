@@ -10,13 +10,13 @@
     &-title {
       font-size: 1.2em;
       font-weight: bold;
-      color: darkblue;
+      color: white;
     }
 
     &-options {
       display: flex;
       justify-content: space-around;
-      color: darkblue;
+      color: white;
 
       &-update {
         margin-right: 1em;
@@ -27,30 +27,65 @@
   &-description {
     font-size: 0.8em;
     font-style: italic;
+    color: white;
     margin: 0.2em 1em;
   }
 
   &-drinks {
     margin: 1em;
     padding: 0.5em 0;
-    border: 1px solid black;
+    background-color: lightsalmon;
+    border: 5px solid lightcoral;
     border-radius: 5px;
 
-    &-desc {
-      text-decoration: underline;
-      text-align: center;
-      font-weight: 500;
-      padding-bottom: 1em;
+    &-header {
+      display: flex;
+      align-items: center;
+      font-size: 1.5em;
+      padding-bottom: 1.5em;
+
+      &-desc {
+        width: 90%;
+        text-decoration: underline;
+        text-align: center;
+        font-weight: bold;
+      }
+
+      &-add {
+        width: 10%;
+        text-align: center;
+        color: white;
+        background-color: lightcoral;
+        border: 3px solid white;
+        border-radius: 50%;
+        margin-right: 0.3em;
+        line-height: 100%;
+      }
     }
 
     &-drink {
+      padding-bottom: 1em;
 
       &-header {
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
+        padding: 0 1em;
 
-        &-title {
-          margin-right: 0.5em;
+        &-elements {
+          display: flex;
+          text-shadow: 5px 5px 5px white;
+          &-title {
+            margin-right: 0.5em;
+          }
+        }
+
+        &-options {
+          display: flex;
+          justify-content: space-around;
+
+          &-update {
+            margin-right: 1em;
+          }
         }
       }
 
@@ -65,24 +100,58 @@
   &-foods {
     margin: 1em;
     padding: 0.5em 0;
-    border: 1px solid black;
+    background-color: lightcoral;
+    border: 5px solid lightsalmon;
     border-radius: 5px;
 
-    &-desc {
-      text-decoration: underline;
-      text-align: center;
-      font-weight: 500;
-      padding-bottom: 1em;
+    &-header {
+      display: flex;
+      align-items: center;
+      font-size: 1.5em;
+      padding-bottom: 1.5em;
+
+      &-desc {
+        width: 90%;
+        text-decoration: underline;
+        text-align: center;
+        font-weight: bold;
+      }
+
+      &-add {
+        width: 10%;
+        text-align: center;
+        color: white;
+        background-color: lightsalmon;
+        border: 3px solid white;
+        border-radius: 50%;
+        margin-right: 0.3em;
+        line-height: 100%;
+      }
     }
 
     &-food {
+      padding-bottom: 1em;
 
       &-header {
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
+        padding: 0 1em;
 
-        &-title {
-          margin-right: 0.5em;
+        &-elements {
+          display: flex;
+          text-shadow: 5px 5px 5px white;
+          &-title {
+            margin-right: 0.5em;
+          }
+        }
+
+        &-options {
+          display: flex;
+          justify-content: space-around;
+
+          &-update {
+            margin-right: 1em;
+          }
         }
       }
 
