@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "jest",
+    "test:watch": "jest --watchAll"
   },
   "dependencies": {
     "axios": "^0.26.0",
@@ -20,6 +22,25 @@
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^1.0.7",
+    "@wojtekmaj/enzyme-adapter-react-17": "^0.6.6",
+    "babel-jest": "^27.5.1",
+    "enzyme": "^3.11.0",
+    "force": "0.0.3",
+    "jest": "^27.5.1",
     "vite": "^2.8.0"
+  },
+  "jest": {
+    "modulePaths": [
+      "./"
+    ],
+    "roots": [
+      "<rootDir>/src",
+      "<rootDir>/tests"
+    ],
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less|scss)$": "<rootDir>/__mocks__/styleMock.js"
+    },
+    "setupFilesAfterEnv": ["<rootDir>/tests/.setup.js"]
   }
 }
