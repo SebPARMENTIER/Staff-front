@@ -14,6 +14,7 @@ import {
 const mapStateToProps = (state) => ({
   email: state.user.email,
   password: state.user.password,
+  restaurant: state.user.restaurant,
   isError: state.user.isError,
   isLogged: state.user.isLogged
 });

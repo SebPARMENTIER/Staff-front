@@ -8,12 +8,12 @@ import './home.scss';
 const Home = ({
   email,
   password,
+  restaurant,
   changeField,
   handleLogin,
   isError,
   isLogged,
-  getAllCards,
-  getAllMenus
+  getAllCards
 }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -21,9 +21,6 @@ const Home = ({
   };
   const handleGetAllCards = () => {
     getAllCards();
-  };
-  const handleGetAllMenus = () => {
-    getAllMenus();
   };
   return (
     <div className="home">
@@ -79,26 +76,26 @@ const Home = ({
           {!isError && (
             <>
             <div className="home-access">
-            <div className="home-access-card">
-                <Link
-                  className='home-access-card-link'
-                  to='/cards'
-                  onClick={handleGetAllCards}
-                >
-                  Accéder aux cartes du restaurant
-                </Link>
+              <div className="home-access-restaurant">
+                <div className="home-access-restaurant-name">{restaurant.name}</div>
+                <div className="home-access-restaurant-adress">{restaurant.adress}</div>
+                <div className="home-access-restaurant-location">
+                  <div className="home-access-restaurant-location-zip_code">{restaurant.zip_code}</div>
+                  <div className="home-access-restaurant-location-city">{restaurant.city}</div>
+                </div>
+                <div className="home-access-restaurant-phone">{restaurant.phone}</div>
+                <div className="home-access-restaurant-email">{restaurant.email}</div>
               </div>
-              <div className="home-access-menu">
-                <Link
-                  className='home-access-menu-link'
-                  to='/menus'
-                  onClick={handleGetAllMenus}
-                >
-                  Accéder aux menus du restaurant
-                </Link>
+              <div className="home-access-card">
+                  <Link
+                    className='home-access-card-link'
+                    to='/cards'
+                    onClick={handleGetAllCards}
+                  >
+                    Accéder aux cartes du restaurant
+                  </Link>
+                </div>
               </div>
-            </div>
-              
             </>
           )}
         </>
@@ -110,10 +107,18 @@ const Home = ({
 Home.propTypes = {
   email: PropTypes.string.isRequired,
   password: PropTypes.string.isRequired,
+  restaurant: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    adress: PropTypes.string.isRequired,
+    zip_code: PropTypes.string.isRequired,
+    city: PropTypes.string.isRequired,
+    phone: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired
+  }).isRequired,
   changeField: PropTypes.func.isRequired,
   handleLogin: PropTypes.func.isRequired,
   getAllCards: PropTypes.func.isRequired,
-  getAllMenus: PropTypes.func.isRequired,
   isError: PropTypes.bool.isRequired,
   isLogged: PropTypes.bool.isRequired
 };

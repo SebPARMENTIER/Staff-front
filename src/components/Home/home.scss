@@ -66,8 +66,28 @@
       text-align: center;
       color: white;
     }
+
+    &-restaurant {
+      text-align: center;
+      color: white;
+      margin-bottom: 2em;
+
+      &-name {
+        font-size: 2em;
+        font-weight: bold;
+      }
+
+      &-location {
+        display: flex;
+        justify-content: center;
+
+        &-zip_code {
+          margin-right: 0.3em;
+        }
+      }
+    }
     
-    &-card, &-menu {
+    &-card {
       margin-bottom: 2em;
       padding: 1em 0.5em;
       background-color: #ff1616;
