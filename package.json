@@ -6,7 +6,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "test": "jest"
+    "test": "jest",
+    "test:cov": "jest --coverage"
   },
   "dependencies": {
     "@babel/core": "^7.17.5",
