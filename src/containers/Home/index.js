@@ -11,10 +11,6 @@ import {
   createGetAllCardsAction
 } from '../../actions/cards';
 
-import {
-  createGetAllMenusAction
-} from '../../actions/menus';
-
 const mapStateToProps = (state) => ({
   email: state.user.email,
   password: state.user.password,
@@ -31,9 +27,6 @@ const mapDispatchToProps = (dispatch) => ({
   },
   getAllCards: () => {
     dispatch(createGetAllCardsAction());
-  },
-  getAllMenus: () => {
-    dispatch(createGetAllMenusAction());
   }
 });
 
