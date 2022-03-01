@@ -67,13 +67,12 @@ describe('user reducer', () => {
       });
     });
     it('should handle correctly LOGIN_ERROR action', () => {
-      const mockApiError = true;
       const action = { type: 'LOGIN_ERROR'};
       const state = reducer();
       const newState = reducer(state, action);
       expect(newState).toEqual({
         ...state,
-        isError: mockApiError
+        isError: true
       });
     });
     it('should handle correctly CLICK_ON_BUTTON_LOGOUT', () => {
@@ -87,7 +86,11 @@ describe('user reducer', () => {
       });
     });
     it('should handle correctly CLICK_ON_LOGOUT action', () => {
-      const mockLogout = {
+      const action = { type : 'CLICK_ON_LOGOUT'};
+      const state = reducer();
+      const newState = reducer(state, action);
+      expect(newState).toEqual({
+        ...state,
         email: '',
         password: '',
         firstname: '',
@@ -96,13 +99,6 @@ describe('user reducer', () => {
         isError: false,
         isLogged: false,
         openLogout: false
-      };
-      const state = reducer();
-      const action = { type : 'CLICK_ON_LOGOUT'};
-      const newState = reducer(state, action);
-      expect(newState).toEqual({
-        ...state,
-        ...mockLogout
       });
     });
   });
