@@ -6,6 +6,7 @@ import Home from '../../containers/Home';
 import Cards from '../../containers/Cards';
 import Card from '../../containers/Card';
 import Footer from '../Footer/footer';
+import Error from '../Error/error';
 
 import './app.scss';
 
@@ -23,6 +24,7 @@ const App = ({
             <Route exact path='/card/:id' element={<Card />} />
           </>
         )}
+        <Route path='*' element={<Error />} />
       </Routes>
       <Footer />
     </div>

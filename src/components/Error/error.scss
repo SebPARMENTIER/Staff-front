@@ -1,0 +1,35 @@
+.error {
+  width: 100vw;
+  height: 100vh;
+  background-color: #0e4bef;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+
+  &-404 {
+    font-size: 5em;
+    text-shadow: 5px 5px 5px #ff1616;
+  }
+
+  &-desc {
+    font-size: 1.5em;
+  }
+
+  &-link {
+    background-color: #ff1616;
+    border: 5px solid #ff5757;
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px #003bda;
+    padding: 0.8em 2em;
+    margin-top: 10em;
+
+    &-home {
+      text-decoration: none;
+      color: white;
+      text-shadow: 1px 1px 1px #0e4bef;
+      font-size: 1.3em;
+    }
+  }
+}
