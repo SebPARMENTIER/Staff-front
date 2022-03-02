@@ -66,7 +66,7 @@ const cardsMiddleware = (store) => (next) => (action) => {
           Authorization: `Bearer ${state.user.token}`,
         },
         data: {
-          id: state.card.cardInfos.id,
+          id: state.card.cardId,
           title: state.card.newTitle,
           description: state.card.newDescription,
         },

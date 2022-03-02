@@ -11,7 +11,6 @@ import './card.scss';
 const Card = ({
   cardsName,
   onClickUpdateCardModal,
-  getCardInfos,
   openUpdateCardModal,
   onClickDeleteCardModal,
   openDeleteCardModal,
@@ -22,14 +21,12 @@ const Card = ({
   const { id } = useParams();
   const cardInfos = cardsName.find(element => element.id == id);
   const handleUpdateCardModal = () => {
-    onClickUpdateCardModal(cardInfos.title, cardInfos.description);
-    getCardInfos(cardInfos);
+    onClickUpdateCardModal(cardInfos.id, cardInfos.title, cardInfos.description);
   };
   const handleDeleteCardModal = () => {
     onClickDeleteCardModal(cardInfos.id);
   };
   useEffect(() => {
-    console.log(cardDeletesSuccess);
     if (cardDeletesSuccess) {
       navigate('/cards');
       setCardDeleteSuccessToFalse();
@@ -136,7 +133,6 @@ Card.propTypes = {
     }).isRequired,
   ).isRequired,
   onClickUpdateCardModal: PropTypes.func.isRequired,
-  getCardInfos: PropTypes.func.isRequired,
   onClickDeleteCardModal: PropTypes.func.isRequired,
   setCardDeleteSuccessToFalse: PropTypes.func.isRequired,
   openUpdateCardModal: PropTypes.bool.isRequired,

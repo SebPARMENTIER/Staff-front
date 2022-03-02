@@ -1,5 +1,4 @@
 import {
-  GET_CARD_INFOS,
   CLICK_ON_BUTTON_UPDATE_CARD,
   SET_UPDATE_CARD_INPUT_VALUE,
   CREATE_UPDATE_CARD_SUCCESS,
@@ -13,7 +12,6 @@ import {
 } from "../actions/cards";
 
 export const initialState = {
-  cardInfos: {},
   openUpdateCardModal: false,
   cardId: '',
   newTitle: '',
@@ -26,16 +24,12 @@ export const initialState = {
 
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
-    case GET_CARD_INFOS:
-      return {
-        ...state,
-        cardInfos: action.value
-      };
     case CLICK_ON_BUTTON_UPDATE_CARD:
       return {
         ...state,
-        newTitle: action.value1,
-        newDescription: action.value2,
+        cardId: action.value1,
+        newTitle: action.value2,
+        newDescription: action.value3,
         openUpdateCardModal: true
       };
     case SET_UPDATE_CARD_INPUT_VALUE:
@@ -47,6 +41,7 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         openUpdateCardModal: false,
+        cardId: '',
         newTitle: '',
         newDescription: '',
         isUpdateCardModalError: false
@@ -59,6 +54,7 @@ const reducer = (state = initialState, action = {}) => {
     case CLICK_ON_BUTTON_ESCAPE_UPDATE_CARD:
       return {
         ...state,
+        cardId: '',
         openUpdateCardModal: false,
         newTitle: '',
         newDescription: '',
@@ -73,6 +69,7 @@ const reducer = (state = initialState, action = {}) => {
     case CREATE_DELETE_CARD_SUCCESS:
       return {
         ...state,
+        cardId: '',
         openDeleteCardModal: false,
         cardDeletesSuccess : true,
         isDeleteCardModalError: false
@@ -80,12 +77,14 @@ const reducer = (state = initialState, action = {}) => {
     case CREATE_DELETE_CARD_ERROR:
       return {
         ...state,
+        cardId: '',
         cardDeletesSuccess : false,
         isDeleteCardModalError: true
       };
     case CLICK_ON_BUTTON_ESCAPE_DELETE_CARD:
       return {
         ...state,
+        cardId: '',
         openDeleteCardModal: false,
         isDeleteCardModalError: false
       };

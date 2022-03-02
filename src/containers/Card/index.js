@@ -4,7 +4,6 @@ import Card from '../../components/Card/card';
 
 import {
   clickOnButtonUpdateCard,
-  cardInfosValue,
   clickOnButtonDeleteCard,
   cardDeleteSuccessToFalse
 } from '../../actions/cards';
@@ -17,11 +16,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  onClickUpdateCardModal: (value1, value2) => {
-    dispatch(clickOnButtonUpdateCard(value1, value2));
-  },
-  getCardInfos: (value) => {
-    dispatch(cardInfosValue(value));
+  onClickUpdateCardModal: (value1, value2, value3) => {
+    dispatch(clickOnButtonUpdateCard(value1, value2, value3));
   },
   onClickDeleteCardModal: (value) => {
     dispatch(clickOnButtonDeleteCard(value));
