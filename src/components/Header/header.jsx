@@ -10,6 +10,7 @@ const Header = ({
   openLogout,
   onClickArrow
 }) => {
+  // Open logout menu
   const handleOnClickArrow = () => {
     onClickArrow();
   };

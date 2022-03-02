@@ -23,12 +23,12 @@ const Card = ({
   // Keep the card with id from url
   const cardInfos = cardsName.find(element => element.id == id);
 
-  // Send informations to card container to put them into state to have them when updateCardModal is open
+  // Open updateCardModal and send informations to card container to put them into state to have them when updateCardModal is open
   const handleUpdateCardModal = () => {
     onClickUpdateCardModal(cardInfos.id, cardInfos.title, cardInfos.description);
   };
 
-  // Send informations to card container to put them into state to have them when deleteCard Modal is open
+  // Open deleteCardModal and send informations to card container to put them into state to have them when deleteCard Modal is open
   const handleDeleteCardModal = () => {
     onClickDeleteCardModal(cardInfos.id);
   };

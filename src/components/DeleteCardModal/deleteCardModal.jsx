@@ -7,9 +7,12 @@ const DeleteCardModal = ({
   onClickValidateDeleteCardModal,
   isDeleteCardModalError
 }) => {
+  // Close deleteCardModal and return to initial state when user aborts create new card modal
   const handleOnClickEscapeUpdateCardModal = () => {
     onClickEscapeDeleteCardModal();
   };
+
+  // Close deleteCardModal and put cardDeleteSuccess to true to can back to /cards
   const handleOnClickValidateDeleteCardModal = () => {
     onClickValidateDeleteCardModal();
   };

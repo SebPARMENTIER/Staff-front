@@ -52,7 +52,7 @@ const cardsMiddleware = (store) => (next) => (action) => {
         },
       };
       axios(config)
-        .then((response) => {
+        .then(() => {
           store.dispatch(createAddNewCardSuccesAction());
           store.dispatch(createGetAllCardsAction());
         })
@@ -76,7 +76,7 @@ const cardsMiddleware = (store) => (next) => (action) => {
         },
       };
       axios(config)
-        .then((response) => {
+        .then(() => {
           store.dispatch(createUpdateCardSuccesAction());
           store.dispatch(createGetAllCardsAction());
         })
@@ -95,7 +95,7 @@ const cardsMiddleware = (store) => (next) => (action) => {
         },
       };
       axios(config)
-        .then((response) => {
+        .then(() => {
           store.dispatch(createDeleteCardSuccesAction());
           store.dispatch(createGetAllCardsAction());
         })

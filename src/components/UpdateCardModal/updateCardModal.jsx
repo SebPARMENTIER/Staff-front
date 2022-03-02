@@ -13,10 +13,13 @@ const UpdateCardModal = ({
   onClickEscapeUpdateCardModal,
   isUpdateCardModalError
 }) => {
+  // Close updateCardModal and submit update card form
   const handleSubmit = (event) => {
     event.preventDefault();
     handleUpdateCardModal();
   };
+
+  // Close updateCardModal and return to initial state when user aborts create new card modal
   const handleOnClickEscapeUpdateCardModal = () => {
     onClickEscapeUpdateCardModal();
   };

@@ -15,15 +15,19 @@ const Home = ({
   isLogged,
   getAllCards
 }) => {
+  // Submit login form
   const handleSubmit = (event) => {
     event.preventDefault();
     handleLogin();
   };
+
+  // Retrieve all cards
   const handleGetAllCards = () => {
     getAllCards();
   };
   return (
     <div className="home">
+      {/* If user is not logged, dipslay login form */}
       {!isLogged && (
         <>
           <div className="home-header">stan</div>
@@ -66,6 +70,7 @@ const Home = ({
           </div>
         </>
       )}
+      {/* If user is logged, display restaurant informations */}
       {isLogged && (
         <>
           {isError && (
@@ -108,13 +113,13 @@ Home.propTypes = {
   email: PropTypes.string.isRequired,
   password: PropTypes.string.isRequired,
   restaurant: PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    name: PropTypes.string.isRequired,
-    adress: PropTypes.string.isRequired,
-    zip_code: PropTypes.string.isRequired,
-    city: PropTypes.string.isRequired,
-    phone: PropTypes.string.isRequired,
-    email: PropTypes.string.isRequired
+    id: PropTypes.number,
+    name: PropTypes.string,
+    adress: PropTypes.string,
+    zip_code: PropTypes.string,
+    city: PropTypes.string,
+    phone: PropTypes.string,
+    email: PropTypes.string
   }).isRequired,
   changeField: PropTypes.func.isRequired,
   handleLogin: PropTypes.func.isRequired,

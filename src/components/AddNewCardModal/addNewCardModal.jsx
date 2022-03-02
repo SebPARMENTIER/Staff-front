@@ -13,10 +13,13 @@ const AddNewCardModal = ({
   onClickEscapeAddNewCardModal,
   isAddNewCardModalError
 }) => {
+  // Submit add new card form
   const handleSubmit = (event) => {
     event.preventDefault();
     handleAddNewCardModal();
   };
+
+  // Close addNewCardModal and return to initial state when user aborts create new card modal
   const handleOnClickEscapeAddNewCardModal = () => {
     onClickEscapeAddNewCardModal();
   };

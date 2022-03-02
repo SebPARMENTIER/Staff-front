@@ -10,6 +10,7 @@ const Cards = ({
   onClickAddNewCardModal,
   openAddNewCardModal
 }) => {
+  // Open addNewCardModal
   const handleAddNewCardModal = () => {
     onClickAddNewCardModal();
   };

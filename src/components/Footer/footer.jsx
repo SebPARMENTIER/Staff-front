@@ -1,6 +1,7 @@
 import './footer.scss';
 
 const Footer = () => {
+  // Get the current year
   const now = new Date();
   const year = now.getFullYear();
   return (

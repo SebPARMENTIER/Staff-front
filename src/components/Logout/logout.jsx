@@ -1,14 +1,13 @@
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-// == Import : local
 import './logout.scss';
 
-// == Component
 const Logout = ({
   openLogout,
   onClickLogout
 }) => {
+  // Turn user logout and return to initial state
   const handleLogout = () => {
     onClickLogout();
   };
@@ -32,5 +31,4 @@ Logout.propTypes = {
   onClickLogout: PropTypes.func.isRequired,
 };
 
-// == Export
 export default Logout;
