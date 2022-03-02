@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router';
+import { Route, Routes } from 'react-router-dom';
 import Header from '../../containers/Header';
 import Home from '../../containers/Home';
 import Cards from '../../containers/Cards';
