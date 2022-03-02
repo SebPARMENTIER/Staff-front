@@ -19,7 +19,7 @@ export const initialState = {
   isUpdateCardModalError: false,
   openDeleteCardModal: false,
   isDeleteCardModalError: false,
-  cardDeletesSuccess : false
+  cardDeleteSuccess : false
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -71,14 +71,14 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         cardId: '',
         openDeleteCardModal: false,
-        cardDeletesSuccess : true,
+        cardDeleteSuccess : true,
         isDeleteCardModalError: false
       };
     case CREATE_DELETE_CARD_ERROR:
       return {
         ...state,
         cardId: '',
-        cardDeletesSuccess : false,
+        cardDeleteSuccess : false,
         isDeleteCardModalError: true
       };
     case CLICK_ON_BUTTON_ESCAPE_DELETE_CARD:
@@ -91,7 +91,7 @@ const reducer = (state = initialState, action = {}) => {
     case CARD_DELETE_SUCCESS_TO_FALSE:
       return {
         ...state,
-        cardDeletesSuccess: false
+        cardDeleteSuccess: false
       };
     default:
       return state;

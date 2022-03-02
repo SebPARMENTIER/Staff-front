@@ -14,24 +14,34 @@ const Card = ({
   openUpdateCardModal,
   onClickDeleteCardModal,
   openDeleteCardModal,
-  cardDeletesSuccess,
+  cardDeleteSuccess,
   setCardDeleteSuccessToFalse
 }) => {
-  let navigate = useNavigate();
+  // Find current id from url
   const { id } = useParams();
+
+  // Keep the card with id from url
   const cardInfos = cardsName.find(element => element.id == id);
+
+  // Send informations to card container to put them into state to have them when updateCardModal is open
   const handleUpdateCardModal = () => {
     onClickUpdateCardModal(cardInfos.id, cardInfos.title, cardInfos.description);
   };
+
+  // Send informations to card container to put them into state to have them when deleteCard Modal is open
   const handleDeleteCardModal = () => {
     onClickDeleteCardModal(cardInfos.id);
   };
+
+  // Use navigate to go back to /cards once a card is deleted and put cardDeleteSuccess to false
+  let navigate = useNavigate();
   useEffect(() => {
-    if (cardDeletesSuccess) {
+    if (cardDeleteSuccess) {
       navigate('/cards');
       setCardDeleteSuccessToFalse();
     }
-  }, [cardDeletesSuccess]);
+  }, [cardDeleteSuccess]);
+  
   return (
     <div className="card">
       <div className="card-header">
@@ -137,7 +147,7 @@ Card.propTypes = {
   setCardDeleteSuccessToFalse: PropTypes.func.isRequired,
   openUpdateCardModal: PropTypes.bool.isRequired,
   openDeleteCardModal: PropTypes.bool.isRequired,
-  cardDeletesSuccess: PropTypes.bool.isRequired
+  cardDeleteSuccess: PropTypes.bool.isRequired
 };
 
 export default Card;

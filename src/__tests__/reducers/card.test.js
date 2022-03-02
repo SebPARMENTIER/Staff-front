@@ -14,7 +14,7 @@ describe('card reducer', () => {
       expect(typeof initialState.isUpdateCardModalError).toBe('boolean');
       expect(typeof initialState.openDeleteCardModal).toBe('boolean');
       expect(typeof initialState.isDeleteCardModalError).toBe('boolean');
-      expect(typeof initialState.cardDeletesSuccess).toBe('boolean');
+      expect(typeof initialState.cardDeleteSuccess).toBe('boolean');
     });
     it('should return a string', () => {
       expect(typeof initialState.cardId).toBe('string');
@@ -117,7 +117,7 @@ describe('card reducer', () => {
         ...state,
         cardId: '',
         openDeleteCardModal: false,
-        cardDeletesSuccess : true,
+        cardDeleteSuccess : true,
         isDeleteCardModalError: false
       });
     });
@@ -128,7 +128,7 @@ describe('card reducer', () => {
       expect(newState).toEqual({
         ...state,
         cardId: '',
-        cardDeletesSuccess : false,
+        cardDeleteSuccess : false,
         isDeleteCardModalError: true
       });
     });
@@ -149,7 +149,7 @@ describe('card reducer', () => {
       const newState = reducer(state, action);
       expect(newState).toEqual({
         ...state,
-        cardDeletesSuccess: false
+        cardDeleteSuccess: false
       });
     });
   });

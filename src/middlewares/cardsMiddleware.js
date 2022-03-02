@@ -23,6 +23,10 @@ const cardsMiddleware = (store) => (next) => (action) => {
       const config = {
         method: 'get',
         url: 'https://seb-stan.herokuapp.com/api/v1/card',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${state.user.token}`,
+        }
       };
       axios(config)
         .then((response) => {
