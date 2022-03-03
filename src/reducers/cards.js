@@ -1,4 +1,5 @@
 import {
+  GET_ALL_CARDS,
   GET_ALL_CARDS_SUCCESS,
   GET_ALL_CARDS_ERROR,
   CLICK_ON_BUTTON_ADD_NEW_CARD,
@@ -21,20 +22,28 @@ export const initialState = {
   cardId: '',
   newTitle: '',
   newDescription: '',
-  isUpdateCardModalError: false
+  isUpdateCardModalError: false,
+  isLoading: false
 };
 
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
+    case GET_ALL_CARDS:
+      return {
+        ...state,
+        isLoading: true
+      };
     case GET_ALL_CARDS_SUCCESS:
       return {
         ...state,
-        cardsName: action.data
+        cardsName: action.data,
+        isLoading: false
       };
     case GET_ALL_CARDS_ERROR:
       return {
         ...state,
-        isError: true
+        isError: true,
+        isLoading: false
       };
     case CLICK_ON_LOGOUT:
       return {
@@ -48,7 +57,8 @@ const reducer = (state = initialState, action = {}) => {
         openUpdateCardModal: false,
         newTitle: '',
         newDescription: '',
-        isUpdateCardModalError: false
+        isUpdateCardModalError: false,
+        isLoading: false
       };
     case CLICK_ON_BUTTON_ADD_NEW_CARD:
       return {

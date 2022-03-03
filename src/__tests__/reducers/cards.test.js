@@ -14,6 +14,7 @@ describe('cards reducer', () => {
       expect(typeof initialState.isAddNewCardModalError).toBe('boolean');
       expect(typeof initialState.openUpdateCardModal).toBe('boolean');
       expect(typeof initialState.isUpdateCardModalError).toBe('boolean');
+      expect(typeof initialState.isLoading).toBe('boolean');
     });
     it('should return a string', () => {
       expect(typeof initialState.title).toBe('string');
@@ -30,6 +31,15 @@ describe('cards reducer', () => {
     });
   });
   describe('execution', () => {
+    it('should handle correctly GET_ALL_CARDS action', () => {
+      const action = { type: 'GET_ALL_CARDS' };
+      const state = reducer();
+      const newState = reducer(state, action);
+      expect(newState).toEqual({
+        ...state,
+        isLoading: true
+      });
+    });
     it('should handle correctly GET_ALL_CARDS_SUCCESS action', () => {
       const mockApiData = [
         {
@@ -72,7 +82,8 @@ describe('cards reducer', () => {
               email: "mundolatino@gmail.com"
             }
           }
-        ]
+        ],
+        isLoading: false
       });
     });
     it('should handle correctly GET_ALL_CARDS_ERROR action', () => {
@@ -81,7 +92,8 @@ describe('cards reducer', () => {
       const newState = reducer(state, action);
       expect(newState).toEqual({
         ...state,
-        isError: true
+        isError: true,
+        isLoading: false
       });
     });
     it('should handle correctly CLICK_ON_LOGOUT action', () => {
@@ -99,7 +111,8 @@ describe('cards reducer', () => {
         openUpdateCardModal: false,
         newTitle: '',
         newDescription: '',
-        isUpdateCardModalError: false
+        isUpdateCardModalError: false,
+        isLoading: false
       });
     });
     it('should handle correctly CLICK_ON_BUTTON_ADD_NEW_CARD action', () => {

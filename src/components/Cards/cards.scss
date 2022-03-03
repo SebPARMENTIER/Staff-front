@@ -3,6 +3,10 @@
   height: 100vh;
   padding-top: 6em;
 
+  &-loading {
+    padding-top: 5em;
+  }
+
   &-desc {
     color: white;
     padding-bottom: 2em;

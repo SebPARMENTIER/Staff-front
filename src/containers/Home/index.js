@@ -16,7 +16,8 @@ const mapStateToProps = (state) => ({
   password: state.user.password,
   restaurant: state.user.restaurant,
   isError: state.user.isError,
-  isLogged: state.user.isLogged
+  isLogged: state.user.isLogged,
+  isLoading: state.user.isLoading
 });
 
 const mapDispatchToProps = (dispatch) => ({

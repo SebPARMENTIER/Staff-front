@@ -12,6 +12,7 @@ describe('user reducer', () => {
       expect(typeof initialState.isError).toBe('boolean');
       expect(typeof initialState.isLogged).toBe('boolean');
       expect(typeof initialState.openLogout).toBe('boolean');
+      expect(typeof initialState.isLoading).toBe('boolean');
     });
     it('should return a string', () => {
       expect(typeof initialState.email).toBe('string');
@@ -27,6 +28,15 @@ describe('user reducer', () => {
     });
   });
   describe('execution', () => {
+    it('should handle correctly SUBMIT_LOGIN action', () => {
+      const action = { type: 'SUBMIT_LOGIN' };
+      const state = reducer();
+      const newState = reducer(state, action);
+      expect(newState).toEqual({
+        ...state,
+        isLoading: true
+      });
+    });
     it('should handle correctly SET_IMPUT_VALUE action', () => {
       const action = {
         type: 'SET_INPUT_VALUE',
@@ -63,7 +73,11 @@ describe('user reducer', () => {
           name: 'MUNDO LATINO'
         },
         token: "un faux token",
-        isLogged: true
+        isError: false,
+        isLogged: true,
+        email: '',
+        password: '',
+        isLoading: false
       });
     });
     it('should handle correctly LOGIN_ERROR action', () => {
@@ -72,7 +86,8 @@ describe('user reducer', () => {
       const newState = reducer(state, action);
       expect(newState).toEqual({
         ...state,
-        isError: true
+        isError: true,
+        isLoading: false
       });
     });
     it('should handle correctly CLICK_ON_BUTTON_LOGOUT', () => {
@@ -98,7 +113,8 @@ describe('user reducer', () => {
         token: null,
         isError: false,
         isLogged: false,
-        openLogout: false
+        openLogout: false,
+        isLoading: false
       });
     });
   });

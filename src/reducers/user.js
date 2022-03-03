@@ -1,4 +1,5 @@
 import {
+  SUBMIT_LOGIN,
   SET_INPUT_VALUE,
   LOGIN_SUCCESS,
   LOGIN_ERROR,
@@ -14,11 +15,17 @@ export const initialState = {
   token: null,
   isError: false,
   isLogged: false,
-  openLogout: false
+  openLogout: false,
+  isLoading: false
 };
 
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
+    case SUBMIT_LOGIN:
+      return {
+        ...state,
+        isLoading: true
+      };
     case SET_INPUT_VALUE:
       return {
         ...state,
@@ -35,11 +42,13 @@ const reducer = (state = initialState, action = {}) => {
         isLogged: true,
         email: '',
         password: '',
+        isLoading: false
       };
     case LOGIN_ERROR:
       return {
         ...state,
         isError: true,
+        isLoading: false
       };
     case CLICK_ON_BUTTON_LOGOUT:
       return {
@@ -56,7 +65,8 @@ const reducer = (state = initialState, action = {}) => {
       token: null,
       isError: false,
       isLogged: false,
-      openLogout: false
+      openLogout: false,
+      isLoading: false
     };
     default:
       return state;

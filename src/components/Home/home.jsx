@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 import Field from '../Field/field';
+import Loading from '../Loading/loading';
 
 import './home.scss';
 
@@ -13,7 +14,8 @@ const Home = ({
   handleLogin,
   isError,
   isLogged,
-  getAllCards
+  getAllCards,
+  isLoading
 }) => {
   // Submit login form
   const handleSubmit = (event) => {
@@ -60,12 +62,19 @@ const Home = ({
                   Vérifiez vos identifiants de connexion.
                 </div>
               )}
-              <button
-                className="home-connexion-form-button"
-                type='submit'
-              >
-                Valider
-              </button>
+              {isLoading && (
+                <div className="home-connexion-loading">
+                  <Loading />
+                </div>
+              )}
+              {!isLoading && (
+                <button
+                  className="home-connexion-form-button"
+                  type='submit'
+                >
+                  Valider
+                </button>
+              )}
             </form>
           </div>
         </>
@@ -125,7 +134,8 @@ Home.propTypes = {
   handleLogin: PropTypes.func.isRequired,
   getAllCards: PropTypes.func.isRequired,
   isError: PropTypes.bool.isRequired,
-  isLogged: PropTypes.bool.isRequired
+  isLogged: PropTypes.bool.isRequired,
+  isLoading: PropTypes.bool.isRequired
 };
   
 export default Home;
