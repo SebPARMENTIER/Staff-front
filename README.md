@@ -2,12 +2,10 @@
 
 
 <div align="center">
-  <img src="documents/Home-connect.PNG" height=600px>
-  <img src="documents/Home-connected.PNG" height=600px>
-</div>
-<div align="center">
-  <img src="documents/All-cards.PNG" height=600px>
-  <img src="documents/Card-detail.PNG" height=600px>
+  <img src="documents/Home-connect.PNG" height=500px>
+  <img src="documents/Home-connected.PNG" height=500px>
+  <img src="documents/All-cards.PNG" height=500px>
+  <img src="documents/Card-detail.PNG" height=500px>
 </div>
   
 ## Table of contents
