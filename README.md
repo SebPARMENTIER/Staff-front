@@ -45,4 +45,4 @@ Enjoy your Stan Front.
 ![Redux](https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white)
 ![Jest](https://img.shields.io/badge/-jest-%23C21325?style=for-the-badge&logo=jest&logoColor=white)
 
-Using Vite.js instead create-react-app, you can find documentation <a href="https://vitejs.dev" target="_blank">here</a>.
+Using Vite.js instead create-react-app, you can find documentation [here](https://vitejs.dev).
