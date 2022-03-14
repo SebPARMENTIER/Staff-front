@@ -1,4 +1,4 @@
-# Stan Front
+# Staff Front
 
 
 <div align="center">
@@ -10,13 +10,13 @@
   
 ## Table of contents
 
-* What is Stan Front ?
+* What is Staff Front ?
 * How does it work ?
 * Stack
 
-### What is Stan Front ?
+### What is Staff Front ?
 
-Stan Front is a Case Study project for restaurant staff.  
+Staff Front is a Case Study project for restaurant staff.  
 
 You can consult all restaurant cards and create a new one.  
 
@@ -28,11 +28,11 @@ Finally, you can delete a card.
 
 Run the app on localhost:3000.
 
-You can login using 'sebastien.parmentier@outlook.fr' or 'emmanuel@heystan.fr' with 'motdepasse' password for both account.
+You can login using 'staff@staff.fr' with 'motdepasse' password.
 
 Once you are logged, you can browse the app.
 
-Enjoy your Stan Front.
+Enjoy your Staff Front.
 
 ### Stack
 
