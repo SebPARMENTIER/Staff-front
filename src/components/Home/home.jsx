@@ -32,7 +32,7 @@ const Home = ({
       {/* If user is not logged, dipslay login form */}
       {!isLogged && (
         <>
-          <div className="home-header">stan</div>
+          <div className="home-header">staff</div>
           <div className="home-desc">Bonjour, veuillez saisir vos identifiants pour vous connecter.</div>
           <div className="home-connexion">
             <form

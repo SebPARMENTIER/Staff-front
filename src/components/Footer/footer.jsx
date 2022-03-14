@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <div className="footer">
       <div className="footer-year">
-        Stan - {year}
+        Staff - {year}
       </div>
     </div>
   );
