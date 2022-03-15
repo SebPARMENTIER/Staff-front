@@ -28,7 +28,7 @@ Finally, you can delete a card.
 
 Run the app on localhost:3000.
 
-You can login using 'staff@staff.fr' with 'motdepasse' password.
+Ask me email and password to connect you.
 
 Once you are logged, you can browse the app.
 
